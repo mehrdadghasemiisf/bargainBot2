@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6BCD790-739E-4E8F-955E-E13ABAA741D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>bargainBot</RootNamespace>
+    <AssemblyName>bargainBot</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDate">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PopupControl">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win">
+      <HintPath>..\..\..\..\Acsan Project\Source\Art\Acsan Art App\7INS\bin\x86\Release\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.15.0.0\lib\net45\Telegram.Bot.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\dbContext.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909290955493_RemiSelBuy.cs" />
+    <Compile Include="Migrations\201909290955493_RemiSelBuy.Designer.cs">
+      <DependentUpon>201909290955493_RemiSelBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910010757454_inttolongPrice.cs" />
+    <Compile Include="Migrations\201910010757454_inttolongPrice.Designer.cs">
+      <DependentUpon>201910010757454_inttolongPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BargainSuccess.cs" />
+    <Compile Include="Models\Consion.cs" />
+    <Compile Include="Models\SellBuy.cs" />
+    <Compile Include="Models\SellBuyType.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionType.cs" />
+    <Compile Include="Models\UserBargain.cs" />
+    <Compile Include="Models\UserPoint.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BargainSuccessRepository.cs" />
+    <Compile Include="Repository\ComisonRepository.cs" />
+    <Compile Include="Repository\SellBuyRepository.cs" />
+    <Compile Include="Repository\SettingBotRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
+    <Compile Include="Repository\UserBargainRepository.cs" />
+    <Compile Include="Repository\UserPointRepository.cs" />
+    <Compile Include="utility\UtilityRepository.cs" />
+    <Compile Include="ViewModels\BargainSuccessReportViewModel.cs" />
+    <Compile Include="ViewModels\BargainSuccessViewModel.cs" />
+    <Compile Include="ViewModels\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\UserPointViewModel.cs" />
+    <Compile Include="View\frmTelorans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTelorans.Designer.cs">
+      <DependentUpon>frmTelorans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAddOrRemovePoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAddOrRemovePoint.Designer.cs">
+      <DependentUpon>frmAddOrRemovePoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAddTransaction.Designer.cs">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAllCloseBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAllCloseBag.Designer.cs">
+      <DependentUpon>frmAllCloseBag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAllOpenBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\frmAllOpenBag.Designer.cs">
+      <DependentUpon>frmAllOpenBag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\FrmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\FrmEditUser.Designer.cs">
+      <DependentUpon>FrmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsers\FrmRobotUseres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsers\FrmRobotUseres.Designer.cs">
+      <DependentUpon>FrmRobotUseres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reports\frmAllTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\reports\frmAllTransaction.Designer.cs">
+      <DependentUpon>frmAllTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reports\frmReportAllOnSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\reports\frmReportAllOnSale.Designer.cs">
+      <DependentUpon>frmReportAllOnSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reports\frmReportComsion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\reports\frmReportComsion.Designer.cs">
+      <DependentUpon>frmReportComsion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reports\frmVerifyPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\reports\frmVerifyPoint.Designer.cs">
+      <DependentUpon>frmVerifyPoint.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909290955493_RemiSelBuy.resx">
+      <DependentUpon>201909290955493_RemiSelBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910010757454_inttolongPrice.resx">
+      <DependentUpon>201910010757454_inttolongPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\frmTelorans.resx">
+      <DependentUpon>frmTelorans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\frmAddOrRemovePoint.resx">
+      <DependentUpon>frmAddOrRemovePoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\frmAddTransaction.resx">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\frmAllCloseBag.resx">
+      <DependentUpon>frmAllCloseBag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\frmAllOpenBag.resx">
+      <DependentUpon>frmAllOpenBag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\FrmEditUser.resx">
+      <DependentUpon>FrmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsers\FrmRobotUseres.resx">
+      <DependentUpon>FrmRobotUseres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reports\frmAllTransaction.resx">
+      <DependentUpon>frmAllTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reports\frmReportAllOnSale.resx">
+      <DependentUpon>frmReportAllOnSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reports\frmReportComsion.resx">
+      <DependentUpon>frmReportComsion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reports\frmVerifyPoint.resx">
+      <DependentUpon>frmVerifyPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
